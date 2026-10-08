@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PT Fathonah Amanah Shidiq Tabligh (PT FAST) | PT FAST</title>
+    <meta
+      name="description"
+      content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Layanan produksi dan maklon kapsul, tablet, serbuk oral, cairan obat dalam dan luar."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#7CA93E", dark: "#5E8629" },
+              accent: "#C0392B",
+              ink: "#1F2937",
+              soft: "#F8FAF6",
+            },
+            fontFamily: {
+              sans: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+              montserrat: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+              display: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+              baskerville: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      [data-nav].is-active {
+        color: #5e8629;
+        box-shadow: inset 0 -2px 0 #c0392b;
+      }
+      .tab.is-tab {
+        background: #7ca93e;
+        color: #fff;
+        border-color: #7ca93e;
+      }
+      .pill {
+        border-radius: 999px;
+        background: linear-gradient(90deg, #7ca93e 55%, #c0392b 55%);
+      }
+      .hero-bg {
+        background:
+          radial-gradient(
+            circle at 85% 20%,
+            rgba(124, 169, 62, 0.35),
+            transparent 45%
+          ),
+          linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1f2937 100%);
+      }
+      section[id] {
+        scroll-margin-top: 5rem;
+      }
+      :focus-visible {
+        outline: 3px solid #c0392b;
+        outline-offset: 2px;
+      }
+      .sec {
+        padding: 5rem 0;
+      }
+      @media (min-width: 1024px) {
+        .sec {
+          padding: 7rem 0;
+        }
+      }
+      .h2 {
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 1.875rem;
+        line-height: 1.2;
+      }
+      @media (min-width: 640px) {
+        .h2 {
+          font-size: 2.25rem;
+        }
+      }
+      .wrap {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 0 1.5rem;
+        }
+      }
+      /* ===== Animasi scroll panel: fade halus mengikuti posisi scroll (dua arah) ===== */
+      .pphoto > img.pimg {
+        inset: -6%;
+        width: 112%;
+        height: 112%;
+        max-width: none;
+        will-change: transform;
+      }
+      .js .pphoto,
+      .js .rv {
+        opacity: 0; /* nilai sebenarnya diatur script berdasarkan posisi scroll */
+        will-change: opacity, transform;
+      }
+      main {
+        overflow-x: clip; /* teks yang meluncur dari samping tidak memunculkan scrollbar horizontal */
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+    <script>
+      /* Pencari foto otomatis: cari NAMA.ext (png/jpg/jpeg/webp) di assets/, assets/img/, lalu assets/foto back/ */
+      window.fotoCari = function (el) {
+        var fs = (el.dataset.f || "").split(","),
+          ext = (el.dataset.ext || "jpg,png,jpeg,webp").split(","),
+          c = [];
+        fs.forEach(function (f) {
+          ["assets/", "assets/img/", "assets/foto back/"].forEach(function (d) {
+            ext.concat(ext.map(function (e) { return e.toUpperCase(); })).forEach(function (e) {
+              c.push(d + f + "." + e);
+            });
+          });
+        });
+        if (el.dataset.fallback) c.push(el.dataset.fallback);
+        var n = (+el.dataset.n || 0) + 1;
+        if (n < c.length) {
+          el.dataset.n = n;
+          el.src = c[n];
+        } else {
+          el.remove();
+        }
+      };
+    </script>
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <div id="site-header"></div>
+    <main>
+      <section
+        id="home"
+        class="hero-bg text-white relative overflow-hidden flex items-center min-h-[100svh] pt-16 lg:pt-20"
+      >
+        <img
+          src="assets/hero.jpg"
+          data-f="hero"
+          data-fallback="assets/foto back/tanaman-herbal.jpg"
+          alt="PT FAST Innovative Herbal Solutions"
+          class="absolute inset-0 w-full h-full object-cover"
+          onerror="fotoCari(this)"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/55 to-transparent pointer-events-none"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="relative wrap w-full py-16 flex flex-col items-center text-center"
+        >
+          <img
+            src="assets/logo-putih.png"
+            alt="Logo PT FAST"
+            class="h-20 w-auto mb-10"
+          />
+          <h1
+            class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl"
+          >
+            PT Fathonah Amanah Shidiq Tabligh
+            <span class="whitespace-nowrap">(PT FAST)</span>
+          </h1>
+          <p class="mt-5 text-xl text-white/90 font-semibold">
+            Innovative Herbal Solutions
+          </p>
+          <p class="mt-3 text-lg text-white/80 max-w-2xl leading-relaxed">
+            Industri Obat Tradisional (IOT) sejak 2014. Produksi dan maklon
+            kapsul, tablet, serbuk oral, serta cairan obat dalam dan luar sesuai
+            CPOTB/GMP BPOM dan Sistem Jaminan Halal.
+          </p>
+          <div class="mt-9 flex flex-wrap justify-center gap-4">
+            <a
+              href="#p-sediaan"
+              class="bg-primary hover:bg-primary-dark font-semibold px-7 py-3.5 rounded-full transition-colors"
+              >Jelajahi Layanan</a
+            >
+            <a
+              href="maklon.html"
+              class="bg-accent hover:bg-red-800 font-semibold px-7 py-3.5 rounded-full transition-colors"
+              >Konsultasi Maklon</a
+            >
+          </div>
+        </div>
+        <a
+          href="#p-tentang"
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 w-11 h-11 grid place-items-center rounded-full border border-white/40 hover:bg-white/10"
+          aria-label="Scroll ke Tentang Kami"
+          ><i class="fa-solid fa-chevron-down"></i
+        ></a>
+      </section>
+      <section
+        id="p-tentang"
+        class="grid md:grid-cols-[58fr_42fr] min-h-[calc(100svh-4rem)] lg:min-h-[calc(100svh-5rem)]"
+      >
+        <div
+          class="pphoto relative h-[45svh] md:h-auto bg-gradient-to-br from-primary to-emerald-900 overflow-hidden"
+        >
+          <img
+            src="assets/gedungfast.png"
+            data-f="gedungfast"
+            data-ext="png,jpg,jpeg,webp"
+            alt="Gedung PT FAST di Cimanggis, Depok"
+            loading="lazy"
+            class="pimg absolute inset-0 w-full h-full object-cover"
+            onerror="fotoCari(this)"
+          />
+        </div>
+        <div
+          class="bg-[#F0F4F1] text-ink flex items-center px-6 sm:px-12 lg:px-14 xl:px-16 py-14"
+        >
+          <div class="w-full max-w-2xl md:ml-auto">
+            <h2
+              class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-2"
+            >
+              Tentang Kami
+            </h2>
+            <p class="rv mt-3 font-baskerville font-semibold text-ink/70">
+              Industri Obat Tradisional sejak 2014
+            </p>
+            <p class="rv mt-4 font-montserrat leading-relaxed opacity-90">
+              PT Fathonah Amanah Shidiq Tabligh (PT FAST) didirikan pada tahun
+              2014 oleh H. Maheda Dwinarendra, MBA sebagai perusahaan berskala
+              Industri Obat Tradisional (IOT) yang berlokasi di Cimanggis,
+              Depok. Kami hadir dengan inovasi, pengembangan, dan riset, serta
+              memanfaatkan bahan alam Indonesia, khususnya tanaman obat, menjadi
+              produk herbal yang berkhasiat untuk pencegahan dan pengobatan
+              penyakit. Seluruh proses produksi mengikuti standar CPOTB/GMP BPOM
+              dan Sistem Jaminan Halal, dengan visi menjadi industri obat
+              tradisional yang berdaya saing global, aman, berkhasiat, dan
+              bermutu.
+            </p>
+            <a
+              href="tentang.html"
+              class="rv inline-block mt-8 border-2 border-ink/60 hover:bg-ink hover:text-white font-semibold px-7 py-3 rounded-full transition-colors"
+              >Selengkapnya <i class="fa-solid fa-arrow-right ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section
+        id="p-fasilitas"
+        class="grid md:grid-cols-[42fr_58fr] min-h-[calc(100svh-4rem)] lg:min-h-[calc(100svh-5rem)]"
+      >
+        <div
+          class="pphoto relative h-[45svh] md:h-auto bg-gradient-to-br from-primary to-emerald-900 overflow-hidden md:order-2"
+        >
+          <img
+            src="assets/fasilitasfoto.jpg"
+            data-f="fasilitasfoto"
+            alt="Fasilitas & Layanan"
+            loading="lazy"
+            class="pimg absolute inset-0 w-full h-full object-cover"
+            onerror="fotoCari(this)"
+          />
+        </div>
+        <div
+          class="bg-ink text-white flex items-center px-6 sm:px-12 lg:px-14 xl:px-16 py-14"
+        >
+          <div class="max-w-md">
+            <h2
+              class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-2"
+            >
+              Fasilitas & Layanan
+            </h2>
+            <p class="rv mt-3 font-baskerville font-semibold text-white/70">
+              Produksi modern sesuai CPOTB/GMP
+            </p>
+            <p class="rv mt-4 font-montserrat leading-relaxed opacity-90">
+              Lima jenis sediaan, mesin produksi per sediaan, serta laboratorium
+              R&D, mikrobiologi, dan fisika kimia.
+            </p>
+            <a
+              href="fasilitas.html"
+              class="rv inline-block mt-8 border-2 border-white/60 hover:bg-white hover:text-ink font-semibold px-7 py-3 rounded-full transition-colors"
+              >Selengkapnya <i class="fa-solid fa-arrow-right ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section
+        id="p-produk"
+        class="grid md:grid-cols-[58fr_42fr] min-h-[calc(100svh-4rem)] lg:min-h-[calc(100svh-5rem)]"
+      >
+        <div
+          class="pphoto relative h-[45svh] md:h-auto bg-gradient-to-br from-primary to-emerald-900 overflow-hidden"
+        >
+          <img
+            src="assets/produk-kami.jpg"
+            data-f="produk-kami"
+            alt="Fasilitas & Layanan"
+            loading="lazy"
+            class="pimg absolute inset-0 w-full h-full object-cover"
+            onerror="fotoCari(this)"
+          />
+        </div>
+        <div
+          class="bg-[#006466] text-white flex items-center px-6 sm:px-12 lg:px-14 xl:px-16 py-14"
+        >
+          <div class="max-w-md">
+            <h2
+              class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-2"
+            >
+              Produk Kami
+            </h2>
+            <p class="rv mt-3 font-baskerville font-semibold text-white/80">
+              Produk herbal ber-NIE BPOM
+            </p>
+            <p class="rv mt-4 font-montserrat leading-relaxed opacity-90">
+              Pilih merek dan kemasan yang sudah terdaftar, atau buat produk
+              herbal khusus sesuai kebutuhan Anda.
+            </p>
+            <a
+              href="produk.html"
+              class="rv inline-block mt-8 border-2 border-white/60 hover:bg-white hover:text-ink font-semibold px-7 py-3 rounded-full transition-colors"
+              >Selengkapnya <i class="fa-solid fa-arrow-right ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="p-sertifikasi" class="sec bg-[#F0F4F1] text-ink">
+        <div class="wrap">
+          <h2
+            class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+          >
+            Sertifikasi
+          </h2>
+          <p class="rv mt-3 font-baskerville font-semibold text-ink/70">
+            Izin dan sertifikasi resmi
+          </p>
+          <p
+            class="rv mt-4 max-w-2xl font-montserrat leading-relaxed opacity-90"
+          >
+            PT FAST memegang izin Industri Obat Tradisional, sertifikat
+            CPOTB/GMP BPOM untuk lima sediaan, serta sertifikat halal.
+          </p>
+          <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <article
+              data-rv="up"
+              class="rv bg-white rounded-xl border border-gray-200 p-6 hover:border-primary hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/bpom.png"
+                  alt="Logo Badan Pengawas Obat dan Makanan"
+                  class="h-14 w-14 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  Badan POM RI
+                </p>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">
+                CPOTB / GMP BPOM
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Sertifikat CPOTB/GMP BPOM RI (23 Januari 2025) untuk lima
+                sediaan.
+              </p>
+              <p class="mt-3 text-[11px] text-gray-500 font-mono break-all">
+                PB-UMKU:912010437128600010009
+              </p>
+            </article>
+            <article
+              data-rv="up"
+              class="rv bg-white rounded-xl border border-gray-200 p-6 hover:border-primary hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/oss.png"
+                  alt="Logo OSS Kementerian Investasi dan Hilirisasi/BKPM"
+                  class="h-14 w-32 shrink-0 object-contain object-left"
+                  loading="lazy"
+                />
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  OSS / BKPM
+                </p>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">
+                Izin Industri Obat Tradisional
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Sertifikat IOT melalui e-licensing OSS (24 Mei 2019).
+              </p>
+              <p class="mt-3 text-[11px] text-gray-500 font-mono break-all">
+                FP.02.03/IV/0400/2019
+              </p>
+            </article>
+            <article
+              data-rv="up"
+              class="rv bg-white rounded-xl border border-gray-200 p-6 hover:border-primary hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/halal.jpg"
+                  alt="Logo Halal Indonesia"
+                  class="h-14 w-14 shrink-0 object-contain"
+                  loading="lazy"
+                />
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  Halal Indonesia
+                </p>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">
+                Sertifikat Halal
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Sertifikat Halal MUI/BPJPH untuk obat tradisional dan suplemen
+                kesehatan.
+              </p>
+            </article>
+            <article
+              data-rv="up"
+              class="rv bg-white rounded-xl border border-gray-200 p-6 hover:border-primary hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/bpjph.png"
+                  data-f="bpjph,lppomhitam"
+                  data-ext="png,jpg,jpeg,webp"
+                  alt="Logo BPJPH"
+                  class="h-14 w-14 shrink-0 object-contain"
+                  loading="lazy"
+                  onerror="fotoCari(this)"
+                />
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  BPJPH
+                </p>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">
+                Sistem Jaminan Halal
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Halal Assurance System dan pelatihan interpretasi serta
+                implementasi SJH.
+              </p>
+            </article>
+          </div>
+          <div data-rv="up" class="rv mt-8 flex flex-wrap items-center gap-2">
+            <span class="text-sm font-semibold mr-2">CPOTB per sediaan:</span
+            ><span
+              class="bg-primary/15 text-primary-dark font-semibold rounded-full px-3 py-1 text-xs"
+              >Kapsul</span
+            ><span
+              class="bg-primary/15 text-primary-dark font-semibold rounded-full px-3 py-1 text-xs"
+              >Tablet</span
+            ><span
+              class="bg-primary/15 text-primary-dark font-semibold rounded-full px-3 py-1 text-xs"
+              >Cairan Obat Dalam</span
+            ><span
+              class="bg-primary/15 text-primary-dark font-semibold rounded-full px-3 py-1 text-xs"
+              >Serbuk Oral</span
+            ><span
+              class="bg-primary/15 text-primary-dark font-semibold rounded-full px-3 py-1 text-xs"
+              >Cairan Obat Luar</span
+            >
+          </div>
+          <a
+            href="sertifikasi.html"
+            class="rv inline-block mt-8 border-2 border-ink/60 hover:bg-ink hover:text-white font-semibold px-7 py-3 rounded-full transition-colors"
+            >Selengkapnya <i class="fa-solid fa-arrow-right ml-1"></i
+          ></a>
+        </div>
+      </section>
+
+      <section id="p-sediaan" class="sec bg-soft text-ink">
+        <div class="wrap">
+          <h2
+            class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+          >
+            Layanan Produk: Jenis Sediaan
+          </h2>
+          <div
+            id="sediaan-grid"
+            data-rv="up"
+            class="rv mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-5"
+          ></div>
+        </div>
+      </section>
+
+      <section id="p-berita" class="sec bg-white text-ink">
+        <div class="wrap">
+          <h2
+            class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+          >
+            Berita &amp; Acara
+          </h2>
+          <p class="rv mt-3 font-baskerville font-semibold text-ink/70">
+            Kabar dan kegiatan terbaru PT FAST
+          </p>
+          <div id="events-grid" class="mt-10 grid md:grid-cols-3 gap-6"></div>
+          <dialog
+            id="event-dialog"
+            aria-labelledby="event-dialog-title"
+            class="w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl p-0 text-ink shadow-2xl backdrop:bg-black/60"
+          >
+            <div class="relative">
+              <img
+                id="event-dialog-image"
+                alt=""
+                class="max-h-[45vh] w-full bg-soft object-cover"
+              />
+              <button
+                type="button"
+                data-event-close
+                class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-black/60 text-white hover:bg-black/80"
+                aria-label="Tutup berita"
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="p-6 sm:p-8">
+              <div class="flex flex-wrap items-center gap-3 text-sm">
+                <span
+                  id="event-dialog-category"
+                  class="rounded-full bg-primary/15 px-3 py-1 font-semibold text-primary-dark"
+                ></span>
+                <time id="event-dialog-date" class="text-gray-500"></time>
+              </div>
+              <h3
+                id="event-dialog-title"
+                class="mt-4 font-display text-2xl font-semibold leading-snug"
+              ></h3>
+              <p
+                id="event-dialog-description"
+                class="mt-4 leading-relaxed text-gray-600"
+              ></p>
+            </div>
+          </dialog>
+        </div>
+      </section>
+
+      <section
+        id="p-lokasi"
+        class="grid md:grid-cols-[58fr_42fr] min-h-[80svh]"
+      >
+        <div
+          id="map-box"
+          class="pphoto relative h-[50svh] md:h-auto bg-gradient-to-br from-primary to-emerald-900 overflow-hidden"
+        >
+          <iframe
+            title="Lokasi PT FAST"
+            class="absolute inset-0 w-full h-full pointer-events-none"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Jl.+Pekapuran+No.04,+Curug,+Cimanggis,+Depok&amp;output=embed"
+          ></iframe>
+          <span
+            id="map-hint"
+            class="absolute bottom-3 left-3 pointer-events-none text-xs bg-black/60 text-white rounded-full px-3 py-1"
+            >Klik peta untuk menggeser dan zoom</span
+          >
+        </div>
+        <div
+          class="bg-[#2c4a1c] text-white flex items-center px-6 sm:px-12 lg:px-14 xl:px-16 py-14"
+        >
+          <div class="max-w-md">
+            <h2
+              class="rv font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-2"
+            >
+              Lokasi
+            </h2>
+            <p class="rv mt-3 font-baskerville font-semibold text-white/80">
+              Cimanggis, Depok, Jawa Barat
+            </p>
+            <p class="rv mt-4 font-montserrat leading-relaxed opacity-90">
+              Jl. Pekapuran No.04, RT.001/RW.007, Curug, Kec. Cimanggis, Kota
+              Depok, Jawa Barat 16453
+            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&amp;query=Jl.+Pekapuran+No.04+Curug+Cimanggis+Depok"
+              target="_blank"
+              rel="noopener"
+              class="rv inline-block mt-8 border-2 border-white/60 hover:bg-white hover:text-ink font-semibold px-7 py-3 rounded-full transition-colors"
+              >Buka di Google Maps
+              <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="hubungi" class="py-16 bg-ink text-white">
+        <div class="wrap flex flex-wrap items-center justify-between gap-6">
+          <div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold">
+              Punya konsep produk herbal?
+            </h2>
+            <p class="mt-2 text-white/70">
+              Konsultasikan formula, registrasi BPOM, dan produksi bersama tim
+              kami.
+            </p>
+          </div>
+          <div class="flex gap-3 flex-wrap">
+            <a
+              href="maklon.html"
+              class="bg-accent hover:bg-red-800 font-semibold px-7 py-3.5 rounded-full"
+              >Lihat Proses Maklon</a
+            ><a
+              href="kontak.html"
+              class="bg-primary hover:bg-primary-dark font-semibold px-7 py-3.5 rounded-full"
+              >Hubungi Kami <i class="fa-solid fa-arrow-right ml-1"></i></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="layout.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+    <script src="smooth.js"></script>
+    <script>
+      (() => {
+        const panels = [...document.querySelectorAll('section[id^="p-"]')];
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+        const ease = (t) => t * t * (3 - 2 * t); // smoothstep
+        const fade = (v, a, b) => ease(clamp((v - a) / (b - a)));
+
+        // tiap elemen punya titik mulai/akhir fade sendiri -> muncul bertahap
+        const makeItem = (p, pi) => ({
+          p,
+          img: p.querySelector(".pimg"),
+          // foto di kiri -> terbuka dari kiri ke kanan; foto di kanan -> dari kanan ke kiri
+          side: p.querySelector(".pphoto")?.classList.contains("md:order-2")
+            ? "right"
+            : "left",
+          photo: {
+            el: p.querySelector(".pphoto"),
+            a: 0.05,
+            b: 0.7,
+            cur: 0,
+            peak: 0,
+          },
+          texts: [...p.querySelectorAll(".rv")].map((el, i) => ({
+            el,
+            // tombol & kartu: naik dari bawah | teks lain: masuk dari kiri / kanan bergantian
+            mode:
+              el.dataset.rv ||
+              (el.tagName === "A" ? "up" : (pi + i) % 2 ? "right" : "left"),
+            a: Math.min(0.2 + i * 0.07, 0.45),
+            b: Math.min(0.75 + i * 0.05, 0.9),
+            cur: 0,
+            peak: 0,
+          })),
+        });
+        const items = panels.map(makeItem);
+
+        const SMOOTH = 0.1; // makin kecil makin halus/lambat (0.05 - 0.2)
+        const FADE_OUT = false; // false = sekali muncul tetap muncul | true = memudar lagi saat keluar layar
+        let raf = 0;
+
+        // foto terbuka seperti tirai (wipe) + fade cepat; mode reduce-motion cukup fade
+        const setPhoto = (o, side) => {
+          if (!o.el) return;
+          if (reduce) {
+            o.el.style.opacity = o.cur.toFixed(3);
+            return;
+          }
+          o.el.style.opacity = Math.min(1, o.cur * 3).toFixed(3);
+          const rest = ((1 - o.cur) * 100).toFixed(1);
+          o.el.style.clipPath =
+            o.cur >= 0.999
+              ? "none"
+              : side === "right"
+                ? `inset(0 0 0 ${rest}%)`
+                : `inset(0 ${rest}% 0 0)`;
+        };
+
+        const frame = () => {
+          raf = 0;
+          const vh = innerHeight;
+          let moving = false;
+          items.forEach(({ p, img, photo, texts, side }) => {
+            const r = p.getBoundingClientRect();
+            if (r.bottom < -50 || r.top > vh + 50) {
+              [photo, ...texts].forEach((o) => {
+                if (!o.el) return;
+                o.cur = FADE_OUT ? 0 : o.peak; // tanpa fade-out: tetap seperti terakhir terlihat
+                o.el.style.opacity = o.cur;
+                if (!FADE_OUT && o.peak >= 1 && o.el !== photo.el)
+                  o.el.style.transform = "none";
+              });
+              setPhoto(photo, side);
+              return;
+            }
+            // seberapa banyak panel terlihat di layar (0..1)
+            const overlap = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+            const vis = clamp(overlap / (Math.min(r.height, vh) * 0.85));
+            [photo, ...texts].forEach((o) => {
+              if (!o.el) return;
+              let raw = fade(vis, o.a, o.b);
+              // tombol/kartu: muncul berdasarkan posisinya sendiri saat di-scroll ke bawah
+              if (o.mode === "up")
+                raw = fade(
+                  (vh - o.el.getBoundingClientRect().top) / (vh * 0.6),
+                  0.1,
+                  0.9,
+                );
+              o.peak = Math.max(o.peak, raw); // titik tertinggi yang pernah dicapai
+              const target = FADE_OUT ? raw : o.peak; // tanpa fade-out: tidak pernah turun lagi
+              o.cur += (target - o.cur) * SMOOTH; // peredam: perubahan dihaluskan
+              if (Math.abs(target - o.cur) > 0.002) moving = true;
+              else o.cur = target;
+              o.el.style.opacity = o.cur.toFixed(3);
+              if (!reduce && o.el !== photo.el) {
+                const k = 1 - o.cur;
+                o.el.style.transform =
+                  o.mode === "up"
+                    ? `translate3d(0,${(k * 44).toFixed(1)}px,0)`
+                    : `translate3d(${((o.mode === "left" ? -1 : 1) * k * 90).toFixed(1)}px,0,0)`;
+              }
+            });
+
+            setPhoto(photo, side);
+
+            if (!reduce && img) {
+              const t = (vh - r.top) / (vh + r.height);
+              const zoom = 1.12 - 0.12 * Math.min(t * 2, 1);
+              const y = (t - 0.5) * -(r.height * 0.08);
+              const x = (side === "right" ? 1 : -1) * (1 - photo.cur) * 40; // isi foto ikut meluncur searah wipe
+              img.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) scale(${zoom.toFixed(3)})`;
+            }
+          });
+          if (moving) raf = requestAnimationFrame(frame);
+        };
+        const kick = () => {
+          if (!raf) raf = requestAnimationFrame(frame);
+        };
+        // ----- News & Events: baca events.json (cadangan bawaan jika dibuka via file://) -----
+        const EVENTS_FALLBACK = [
+          {
+            judul:
+              "Audit CPOTB: Perpanjangan Sertifikat Cara Pembuatan Obat Tradisional yang Baik",
+            tanggal: "2026-09-12",
+            kategori: "Sertifikasi",
+            deskripsi:
+              "Tim QA PT FAST menjalani audit CPOTB dan seluruh area produksi dinyatakan memenuhi standar.",
+            gambar: "assets/events/event-1.jpg",
+            link: "#",
+          },
+          {
+            judul: "Hadir di Pameran Herbal & Nutrasetikal Indonesia",
+            tanggal: "2026-08-20",
+            kategori: "Pameran",
+            deskripsi:
+              "Kami memperkenalkan layanan maklon kapsul, tablet, dan cairan obat dalam kepada calon mitra.",
+            gambar: "assets/events/event-2.jpg",
+            link: "#",
+          },
+          {
+            judul:
+              "Kunjungan Pakar: Pendampingan Formulasi Bersama Profesor Farmasi",
+            tanggal: "2026-07-05",
+            kategori: "Riset & Pengembangan",
+            deskripsi:
+              "Tim R&D berdiskusi dengan akademisi tentang standarisasi ekstrak untuk produk klien maklon.",
+            gambar: "assets/events/event-3.jpg",
+            link: "#",
+          },
+        ];
+        const esc = (t = "") =>
+          String(t).replace(
+            /[&<>"']/g,
+            (c) =>
+              ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;",
+              })[c],
+          );
+        const newsPanel = document.getElementById("p-berita");
+        const eventDialog = document.getElementById("event-dialog");
+        const eventDialogImage = document.getElementById("event-dialog-image");
+        const eventDialogCategory = document.getElementById(
+          "event-dialog-category",
+        );
+        const eventDialogDate = document.getElementById("event-dialog-date");
+        const eventDialogTitle = document.getElementById("event-dialog-title");
+        const eventDialogDescription = document.getElementById(
+          "event-dialog-description",
+        );
+        let renderedEvents = [];
+        const renderEvents = (list) => {
+          renderedEvents = [...list].sort((x, y) =>
+            y.tanggal.localeCompare(x.tanggal),
+          );
+          document.getElementById("events-grid").innerHTML = renderedEvents
+            .map((e, index) => {
+              const tgl = new Date(e.tanggal + "T00:00:00").toLocaleDateString(
+                "id-ID",
+                { day: "numeric", month: "long", year: "numeric" },
+              );
+              const more =
+                e.link && e.link !== "#"
+                  ? `<a href="${esc(e.link)}" class="mt-4 text-sm font-semibold text-primary-dark hover:text-accent">Baca selengkapnya <i class="fa-solid fa-arrow-right ml-1"></i></a>`
+                  : "";
+              return `<article data-rv="up" class="rv bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-[16/10] bg-gradient-to-br from-primary to-emerald-900 grid place-items-center text-white/40"><i class="fa-regular fa-newspaper text-5xl"></i><img src="${esc(e.gambar)}" alt="${esc(e.judul)}" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"></div>
+                <div class="p-6 flex-1 flex flex-col"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"><span class="bg-primary/15 text-primary-dark font-semibold rounded-full px-2.5 py-0.5">${esc(e.kategori)}</span><time class="text-gray-500">${tgl}</time></div>
+                <h3 class="mt-3 font-display text-lg font-semibold leading-snug">${esc(e.judul)}</h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed flex-1">${esc(e.deskripsi)}</p>
+                <div class="mt-4 flex flex-wrap items-center gap-4"><button type="button" data-event-detail="${index}" class="inline-flex items-center gap-2 text-sm font-semibold text-primary-dark hover:text-accent"><i class="fa-solid fa-circle-plus" aria-hidden="true"></i>Lihat detail berita</button>${more}</div></div></article>`;
+            })
+            .join("");
+          const i = panels.indexOf(newsPanel);
+          items[i] = makeItem(newsPanel, i);
+          kick();
+        };
+        document
+          .getElementById("events-grid")
+          .addEventListener("click", (event) => {
+            const button = event.target.closest("[data-event-detail]");
+            if (!button) return;
+            const selectedEvent =
+              renderedEvents[Number(button.dataset.eventDetail)];
+            if (!selectedEvent) return;
+            eventDialogImage.src = selectedEvent.gambar || "";
+            eventDialogImage.alt = selectedEvent.judul || "";
+            eventDialogImage.classList.toggle("hidden", !selectedEvent.gambar);
+            eventDialogImage.onerror = () =>
+              eventDialogImage.classList.add("hidden");
+            eventDialogCategory.textContent = selectedEvent.kategori || "";
+            eventDialogDate.dateTime = selectedEvent.tanggal || "";
+            eventDialogDate.textContent = new Date(
+              (selectedEvent.tanggal || "") + "T00:00:00",
+            ).toLocaleDateString("id-ID", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            });
+            eventDialogTitle.textContent = selectedEvent.judul || "";
+            eventDialogDescription.textContent = selectedEvent.deskripsi || "";
+            eventDialog.showModal();
+          });
+        eventDialog.addEventListener("click", (event) => {
+          if (
+            event.target === eventDialog ||
+            event.target.closest("[data-event-close]")
+          )
+            eventDialog.close();
+        });
+        renderEvents(EVENTS_FALLBACK);
+        fetch("events.json")
+          .then((r) => (r.ok ? r.json() : Promise.reject()))
+          .then((d) => {
+            if (JSON.stringify(d) !== JSON.stringify(EVENTS_FALLBACK))
+              renderEvents(d);
+          })
+          .catch(() => {});
+
+        // ----- Peta: aktif setelah diklik supaya scroll halaman tidak tertahan di iframe -----
+        const mapBox = document.getElementById("map-box");
+        const mapFrame = mapBox.querySelector("iframe"),
+          mapHint = document.getElementById("map-hint");
+        mapBox.addEventListener("click", () => {
+          mapFrame.classList.remove("pointer-events-none");
+          mapHint.classList.add("hidden");
+        });
+        mapBox.addEventListener("mouseleave", () => {
+          mapFrame.classList.add("pointer-events-none");
+          mapHint.classList.remove("hidden");
+        });
+
+        addEventListener("scroll", kick, { passive: true });
+        addEventListener("resize", kick);
+        kick();
+      })();
+    </script>
+    <script>
+      /* Di halaman utama, menu "Kontak" di header menggulir ke bagian "Hubungi Kami" di bawah.
+         Tombol "Hubungi Kami" di bagian itu yang mengarah ke halaman kontak.html. */
+      document.addEventListener(
+        "click",
+        function (e) {
+          var a = e.target.closest('#site-header a[href$="kontak.html"]');
+          var target = document.getElementById("hubungi");
+          if (!a || !target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        },
+        true,
+      );
+    </script>
+  </body>
+</html>

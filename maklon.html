@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proses Maklon | PT FAST</title>
+<meta name="description" content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Layanan produksi dan maklon kapsul, tablet, serbuk oral, cairan obat dalam dan luar.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { primary: { DEFAULT: '#7CA93E', dark: '#5E8629' }, accent: '#C0392B', ink: '#1F2937', soft: '#F8FAF6' },
+  fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], display: ['Fraunces', 'serif'] }
+}}}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  [data-nav].is-active { color: #5E8629; box-shadow: inset 0 -2px 0 #C0392B; }
+  .tab.is-tab { background: #7CA93E; color: #fff; border-color: #7CA93E; }
+  .pill { border-radius: 999px; background: linear-gradient(90deg, #7CA93E 55%, #C0392B 55%); }
+  .hero-bg { background: radial-gradient(circle at 85% 20%, rgba(124,169,62,.35), transparent 45%), linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1F2937 100%); }
+  section[id] { scroll-margin-top: 5rem; }
+  :focus-visible { outline: 3px solid #C0392B; outline-offset: 2px; }
+  .sec { padding: 5rem 0; } @media (min-width: 1024px) { .sec { padding: 7rem 0; } }
+  .h2 { font-family: Fraunces, serif; font-weight: 700; font-size: 1.875rem; line-height: 1.2; } @media (min-width: 640px) { .h2 { font-size: 2.25rem; } }
+  .wrap { max-width: 80rem; margin: 0 auto; padding: 0 1rem; } @media (min-width: 640px) { .wrap { padding: 0 1.5rem; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+<div id="site-header"></div>
+<main>
+<section class="hero-bg text-white"><div class="wrap py-12"><div class="pill w-16 h-6 mb-4" aria-hidden="true"></div><h1 class="font-display text-3xl sm:text-4xl font-bold">Proses Maklon</h1><p class="mt-2 text-white/75 max-w-2xl">Dua belas tahap kerjasama toll manufacturing dari konsultasi hingga pengiriman.</p></div></section>
+<section id="maklon" class="sec bg-soft"><div class="wrap">
+  <h2 class="h2">Proses Maklon</h2>
+  <p class="mt-4 text-gray-600 max-w-2xl">Dari konsultasi konsep hingga produk jadi, berikut 12 tahap kerjasama maklon (toll manufacturing) bersama PT FAST.</p>
+  <ol id="maklon-steps" class="mt-12 max-w-3xl"></ol>
+  <a href="kontak.html" class="inline-block mt-10 bg-accent hover:bg-red-800 text-white font-semibold px-7 py-3.5 rounded-full">Konsultasi Maklon</a>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="layout.js"></script>
+<script src="data.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>

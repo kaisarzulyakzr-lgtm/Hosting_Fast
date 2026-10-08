@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kerjasama Penelitian & Praktik Kerja | PT FAST</title>
+    <meta
+      name="description"
+      content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Layanan produksi dan maklon kapsul, tablet, serbuk oral, cairan obat dalam dan luar."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#7CA93E", dark: "#5E8629" },
+              accent: "#C0392B",
+              ink: "#1F2937",
+              soft: "#F8FAF6",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              display: ["Fraunces", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      [data-nav].is-active {
+        color: #5e8629;
+        box-shadow: inset 0 -2px 0 #c0392b;
+      }
+      .tab.is-tab {
+        background: #7ca93e;
+        color: #fff;
+        border-color: #7ca93e;
+      }
+      .pill {
+        border-radius: 999px;
+        background: linear-gradient(90deg, #7ca93e 55%, #c0392b 55%);
+      }
+      .hero-bg {
+        background:
+          radial-gradient(
+            circle at 85% 20%,
+            rgba(124, 169, 62, 0.35),
+            transparent 45%
+          ),
+          linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1f2937 100%);
+      }
+      section[id] {
+        scroll-margin-top: 5rem;
+      }
+      :focus-visible {
+        outline: 3px solid #c0392b;
+        outline-offset: 2px;
+      }
+      .sec {
+        padding: 5rem 0;
+      }
+      @media (min-width: 1024px) {
+        .sec {
+          padding: 7rem 0;
+        }
+      }
+      .h2 {
+        font-family: Fraunces, serif;
+        font-weight: 700;
+        font-size: 1.875rem;
+        line-height: 1.2;
+      }
+      @media (min-width: 640px) {
+        .h2 {
+          font-size: 2.25rem;
+        }
+      }
+      .wrap {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 0 1.5rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <div id="site-header"></div>
+    <main>
+      <section class="hero-bg text-white">
+        <div class="wrap py-12">
+          <div class="pill w-16 h-6 mb-4" aria-hidden="true"></div>
+          <h1 class="font-display text-3xl sm:text-4xl font-bold">
+            Kerjasama Penelitian & Praktik Kerja
+          </h1>
+          <p class="mt-2 text-white/75 max-w-2xl">
+            Kolaborasi dengan guru besar dan perguruan tinggi untuk riset dan
+            pengembangan produk herbal.
+          </p>
+        </div>
+      </section>
+      <section id="kerjasama" class="sec">
+        <div class="wrap">
+          <h2 class="h2">Kerjasama Penelitian &amp; Praktik Kerja</h2>
+          <p class="mt-4 text-gray-600 max-w-3xl">
+            PT FAST sangat terbuka untuk berbagai bidang kerjasama. Ekstrak
+            herbal PT FAST telah menjadi bahan penelitian yang menghasilkan
+            beberapa jurnal internasional yang dipublikasikan.
+          </p>
+          <h3 class="font-display text-2xl font-semibold mt-12">
+            Bidang Biomolekuler dan Teknologi Farmasi Nano Partikel
+          </h3>
+          <div id="riset-grid" class="mt-6 grid lg:grid-cols-2 gap-5"></div>
+          <div id="kj-foto" class="mt-8 grid sm:grid-cols-3 gap-5"></div>
+          <h3 class="font-display text-2xl font-semibold mt-16">
+            Pengembangan Produk Kapsul Jamu Menuju Obat Herbal Terstandar (OHT)
+          </h3>
+          <div id="oht-grid" class="mt-6 grid lg:grid-cols-3 gap-5"></div>
+          <p class="mt-8 text-sm text-gray-600">
+            H. Maheda Dwinarendra, MBA bersama Prof. Dr. apt. Fadlina Chany
+            Saputri, M.Si., Prof. Dr. apt. Abdul Mun'im, M.Si., dan Prof. Dr.
+            apt. Arry Yanuar, M.Si. dari Fakultas Farmasi Universitas Indonesia
+            (FFUI).
+          </p>
+          <div id="ffui-foto" class="mt-4 grid sm:grid-cols-3 gap-5"></div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="layout.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

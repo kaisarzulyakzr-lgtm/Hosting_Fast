@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keunggulan PT FAST | PT FAST</title>
+<meta name="description" content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Layanan produksi dan maklon kapsul, tablet, serbuk oral, cairan obat dalam dan luar.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { primary: { DEFAULT: '#7CA93E', dark: '#5E8629' }, accent: '#C0392B', ink: '#1F2937', soft: '#F8FAF6' },
+  fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], display: ['Fraunces', 'serif'] }
+}}}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>
+document.documentElement.classList.add('js');
+/* Pencari foto otomatis: coba NAMA.jpg / .jpeg / .png / .webp (huruf kecil & besar) di folder yang ditentukan.
+   Folder default assets/img/. Jika semuanya gagal, foto disembunyikan dan placeholder di belakangnya tampil. */
+window.fotoCari = function (img) {
+  var f = img.dataset.f, dirs = (img.dataset.d || 'assets/img/').split('|'),
+      exts = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
+  if (!img._c) {
+    img._c = [];
+    dirs.forEach(function (d) { exts.forEach(function (e) { img._c.push(d + f + '.' + e); }); });
+    img._i = 1; /* kandidat pertama (.jpg) sudah dicoba lewat atribut src */
+  }
+  if (img._i < img._c.length) { img.src = img._c[img._i++]; return; }
+  img.classList.add('hidden');
+  var n = img.nextElementSibling;
+  if (n && n.classList.contains('fb')) n.classList.remove('hidden');
+};
+/* Begitu foto berhasil dimuat, sembunyikan placeholder hijau di belakangnya
+   (supaya tidak tembus di sudut foto yang transparan). */
+document.addEventListener('load', function (e) {
+  var t = e.target;
+  if (t && t.tagName === 'IMG' && t.parentNode && t.parentNode.classList.contains('inner')) t.parentNode.classList.add('ok');
+}, true);
+</script>
+<style>
+  [data-nav].is-active { color: #5E8629; box-shadow: inset 0 -2px 0 #C0392B; }
+  .tab.is-tab { background: #7CA93E; color: #fff; border-color: #7CA93E; }
+  .pill { border-radius: 999px; background: linear-gradient(90deg, #7CA93E 55%, #C0392B 55%); }
+  .hero-bg { background: radial-gradient(circle at 85% 20%, rgba(124,169,62,.35), transparent 45%), linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1F2937 100%); }
+  section[id] { scroll-margin-top: 5rem; }
+  :focus-visible { outline: 3px solid #C0392B; outline-offset: 2px; }
+  .sec { padding: 5rem 0; } @media (min-width: 1024px) { .sec { padding: 7rem 0; } }
+  .h2 { font-family: Fraunces, serif; font-weight: 700; font-size: 1.875rem; line-height: 1.2; } @media (min-width: 640px) { .h2 { font-size: 2.25rem; } }
+  .wrap { max-width: 80rem; margin: 0 auto; padding: 0 1rem; } @media (min-width: 640px) { .wrap { padding: 0 1.5rem; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* ---- Tampilan halaman Keunggulan ---- */
+  .eyebrow { display: inline-flex; align-items: center; gap: .6rem; margin-bottom: .75rem; font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #5E8629; }
+  .eyebrow::before { content: ""; width: 1.75rem; height: 2px; background: #C0392B; }
+
+  /* kartu sorotan di bawah hero */
+  .hl-card { background: #fff; border: 1px solid #E5E9DF; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 18px 36px -24px rgba(31,41,55,.45); transition: transform .25s ease, box-shadow .25s ease; }
+  .hl-card:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -22px rgba(94,134,41,.55); }
+  .hl-icon { width: 2.75rem; height: 2.75rem; border-radius: .75rem; display: grid; place-items: center; font-size: 1.15rem; color: #fff; background: linear-gradient(135deg, #7CA93E, #5E8629); }
+
+  /* nomor besar */
+  .num { font-family: Fraunces, serif; font-weight: 700; font-size: 4.5rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(124,169,62,.55); }
+
+  /* bingkai foto dengan blok warna di belakang */
+  .frame { position: relative; }
+  .frame::before { content: ""; position: absolute; right: -14px; bottom: -14px; width: 72%; height: 72%; border-radius: 1.1rem; background: linear-gradient(135deg, #7CA93E, #5E8629); opacity: .22; z-index: 0; }
+  .frame.flip::before { right: auto; left: -14px; }
+  .frame .inner { position: relative; z-index: 1; overflow: hidden; border-radius: 1rem; aspect-ratio: 16/10; box-shadow: 0 24px 44px -24px rgba(31,41,55,.5); }
+  .frame .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 3.25rem; color: rgba(255,255,255,.75); background: linear-gradient(135deg, #2c4a1c, #7CA93E); }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .frame:hover img { transform: scale(1.04); }
+  .frame .inner.ok { background: #fff; }
+  .frame .inner.ok .ph { display: none; }
+  .frame .badge { position: absolute; z-index: 2; left: 1rem; bottom: 1rem; display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .9rem; border-radius: 999px; background: rgba(255,255,255,.95); font-size: .75rem; font-weight: 700; color: #5E8629; box-shadow: 0 8px 18px -8px rgba(0,0,0,.35); }
+  .frame .badge i { color: #C0392B; }
+
+  .check li { display: flex; gap: .75rem; align-items: flex-start; }
+  .check li i { margin-top: .3rem; font-size: .8rem; color: #7CA93E; }
+
+  /* kartu guru */
+  .guru-card { position: relative; display: flex; gap: 1.25rem; padding: 1.5rem; background: #fff; border: 1px solid #E5E9DF; border-radius: 1.1rem; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
+  .guru-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(180deg, #7CA93E, #C0392B); }
+  .guru-card:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -24px rgba(31,41,55,.45); }
+  .guru-foto { flex-shrink: 0; width: 7rem; height: 7rem; border-radius: 1rem; overflow: hidden; background: linear-gradient(135deg, #EEF4E4, #DDE9C7); display: grid; place-items: center; outline: 3px solid #fff; box-shadow: 0 0 0 2px #7CA93E; }
+  @media (min-width: 640px) { .guru-foto { width: 9rem; height: 9rem; } }
+  .guru-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* animasi muncul saat di-scroll */
+  .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } .frame img, .hl-card, .guru-card { transition: none; } }
+</style>
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+<div id="site-header"></div>
+<main>
+<section class="hero-bg text-white"><div class="wrap py-12 pb-20"><div class="pill w-16 h-6 mb-4" aria-hidden="true"></div><h1 class="font-display text-3xl sm:text-4xl font-bold">Keunggulan PT FAST</h1><p class="mt-2 text-white/75 max-w-2xl">Simplisia terstandar GAP, ekstraksi medical grade, dan proses produksi CPOTB.</p></div></section>
+
+<!-- Sorotan singkat -->
+<section class="relative z-10 -mt-10"><div class="wrap">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="hl-card reveal"><div class="hl-icon"><i class="fa-solid fa-seedling"></i></div><h3 class="mt-4 font-semibold">Simplisia Bersertifikat GAP</h3><p class="mt-1 text-sm text-gray-600">Panen, pembersihan, dan pengeringan terjamin kualitasnya.</p></div>
+    <div class="hl-card reveal"><div class="hl-icon"><i class="fa-solid fa-flask"></i></div><h3 class="mt-4 font-semibold">Ekstrak Medical Grade</h3><p class="mt-1 text-sm text-gray-600">Mesin ekstraktor berteknologi tinggi dengan metode maserasi.</p></div>
+    <div class="hl-card reveal"><div class="hl-icon"><i class="fa-solid fa-graduation-cap"></i></div><h3 class="mt-4 font-semibold">Diajarkan Guru Besar</h3><p class="mt-1 text-sm text-gray-600">Metode dari Prof. Suwijoyo Pramono dan Prof. Sidik Oemar.</p></div>
+    <div class="hl-card reveal"><div class="hl-icon"><i class="fa-solid fa-certificate"></i></div><h3 class="mt-4 font-semibold">Produksi CPOTB BPOM</h3><p class="mt-1 text-sm text-gray-600">Menerapkan CPOTB 2011 dan CPOTB 2021 dari BPOM RI.</p></div>
+  </div>
+</div></section>
+
+<section id="keunggulan" class="sec"><div class="wrap">
+  <p class="eyebrow">Mengapa PT FAST</p>
+  <h2 class="h2">Keunggulan PT FAST</h2>
+
+  <!-- 01 Simplisia -->
+  <div class="mt-14 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="frame reveal">
+      <div class="inner"><div class="ph"><i class="fa-solid fa-seedling"></i></div>
+        <img src="assets/img/keunggulan-simplisia.jpg" data-f="keunggulan-simplisia" alt="Simplisia herba" loading="lazy" onerror="fotoCari(this)"></div>
+      <span class="badge"><i class="fa-solid fa-leaf"></i> Bersertifikat GAP</span>
+    </div>
+    <div class="reveal">
+      <div class="num" aria-hidden="true">01</div>
+      <h3 class="font-display text-2xl font-semibold mt-2">Bahan Simplisia Herba</h3>
+      <p class="mt-4 text-gray-600 leading-relaxed">PT FAST menggunakan simplisia bersertifikat Good Agriculture Practice (GAP) untuk ekstraksi, sehingga proses panen, pembersihan, dan pengeringan terjamin kualitasnya. Kadar zat aktif (native extract) dalam simplisia lebih kuat dibandingkan simplisia dari supplier lain.</p>
+      <ul class="check mt-5 space-y-2 text-sm text-gray-700">
+        <li><i class="fa-solid fa-circle-check"></i>Bersertifikat Good Agriculture Practice (GAP)</li>
+        <li><i class="fa-solid fa-circle-check"></i>Panen, pembersihan, dan pengeringan terjamin</li>
+        <li><i class="fa-solid fa-circle-check"></i>Kadar zat aktif (native extract) lebih kuat</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 02 Ekstraksi -->
+  <div class="mt-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="reveal lg:order-1">
+      <div class="num" aria-hidden="true">02</div>
+      <h3 class="font-display text-2xl font-semibold mt-2">Cara Proses Ekstraksi</h3>
+      <p class="mt-4 text-gray-600 leading-relaxed">Kami menggunakan mesin ekstraktor berteknologi tinggi untuk menghasilkan ekstrak herbal Medical Grade. Metode maserasi yang kami gunakan diajarkan langsung oleh guru kami, Prof. Dr. Apt Suwijoyo Pramono, DEA dan Prof. Dr. Apt Sidik Oemar, dengan perendaman air atau etanol sesuai morfologi simplisia. Hasilnya, produk herbal kami tidak hanya bersifat promotif dan preventif, tetapi dapat mencapai kategori kuratif dan rehabilitatif.</p>
+      <ul class="check mt-5 space-y-2 text-sm text-gray-700">
+        <li><i class="fa-solid fa-circle-check"></i>Mesin ekstraktor berteknologi tinggi</li>
+        <li><i class="fa-solid fa-circle-check"></i>Maserasi dengan air atau etanol sesuai morfologi simplisia</li>
+        <li><i class="fa-solid fa-circle-check"></i>Ekstrak herbal Medical Grade</li>
+      </ul>
+    </div>
+    <div class="frame flip reveal">
+      <div class="inner"><div class="ph"><i class="fa-solid fa-flask"></i></div>
+        <img src="assets/img/keunggulan-ekstraksi.jpg" data-f="keunggulan-ekstraksi" alt="Proses ekstraksi" loading="lazy" onerror="fotoCari(this)"></div>
+      <span class="badge"><i class="fa-solid fa-flask-vial"></i> Medical Grade</span>
+    </div>
+  </div>
+
+  <!-- 03 Produksi -->
+  <div class="mt-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="frame reveal">
+      <div class="inner"><div class="ph"><i class="fa-solid fa-industry"></i></div>
+        <img src="assets/img/fas-produksi.jpg" data-f="fas-produksi" alt="Proses produksi" loading="lazy" onerror="fotoCari(this)"></div>
+      <span class="badge"><i class="fa-solid fa-shield-halved"></i> CPOTB / GMP</span>
+    </div>
+    <div class="reveal">
+      <div class="num" aria-hidden="true">03</div>
+      <h3 class="font-display text-2xl font-semibold mt-2">Cara Proses Produksi</h3>
+      <p class="mt-4 text-gray-600 leading-relaxed">Produk herbal diproduksi dengan teknologi modern dan mesin berstandar proses yang benar, dikontrol langsung oleh tenaga kompeten sehingga higienis, aman, dan berkhasiat. Seluruh proses produksi menerapkan persyaratan GMP/CPOTB dari BPOM RI (CPOTB 2011 dan CPOTB 2021).</p>
+      <ul class="check mt-5 space-y-2 text-sm text-gray-700">
+        <li><i class="fa-solid fa-circle-check"></i>Teknologi modern dan mesin berstandar proses yang benar</li>
+        <li><i class="fa-solid fa-circle-check"></i>Dikontrol langsung oleh tenaga kompeten</li>
+        <li><i class="fa-solid fa-circle-check"></i>GMP/CPOTB BPOM RI (CPOTB 2011 dan 2021)</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- Guru -->
+<section id="guru" class="sec bg-soft"><div class="wrap">
+  <div class="max-w-2xl reveal">
+    <p class="eyebrow">Guru Kami</p>
+    <h2 class="h2">Profil Guru Kami</h2>
+    <p class="mt-4 text-gray-600">Metode maserasi kami diajarkan langsung oleh dua pakar di bidang fitokimia dan farmakognosi.</p>
+  </div>
+  <div id="guru-grid" class="mt-10 grid lg:grid-cols-2 gap-6"></div>
+</div></section>
+
+<!-- Ajakan -->
+<section class="hero-bg text-white"><div class="wrap py-14 text-center">
+  <div class="pill w-16 h-6 mb-5 mx-auto" aria-hidden="true"></div>
+  <h2 class="font-display text-2xl sm:text-3xl font-bold">Siap memproduksi herbal Anda bersama kami?</h2>
+  <p class="mt-3 text-white/75 max-w-xl mx-auto">Konsultasikan konsep produk Anda dengan tim kami.</p>
+  <div class="mt-7 flex flex-wrap justify-center gap-3">
+    <a href="kontak.html" class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-dark transition"><i class="fa-solid fa-comments"></i> Konsultasi Sekarang</a>
+    <a href="maklon.html" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 font-semibold text-white hover:bg-white/10 transition">Lihat Alur Maklon <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="layout.js"></script>
+<script src="data.js"></script>
+<script src="script.js" defer></script>
+<script>
+/* Kartu "Profil Guru Kami" dengan slot foto kotak.
+   Foto dicari di assets/img/<kode>.jpg, lalu assets/orang/<kode>.jpg.
+   Jika belum ada, tampil ikon placeholder. Berjalan setelah script.js, jadi menggantikan isi #guru-grid. */
+window.addEventListener('load', function () {
+  var grid = document.getElementById('guru-grid');
+  if (grid && window.DATA && DATA.gurus) {
+    grid.innerHTML = DATA.gurus.map(function (g) {
+      return '<article class="guru-card reveal">' +
+        '<div class="guru-foto">' +
+          '<img src="assets/img/' + g[1] + '.jpg" alt="' + g[0] + '" loading="lazy" data-f="' + g[1] + '" data-d="assets/img/|assets/orang/">' +
+          '<i class="fb fa-solid fa-user text-4xl text-primary/50 hidden" aria-hidden="true"></i>' +
+        '</div>' +
+        '<div class="min-w-0"><h3 class="font-display text-lg font-semibold leading-snug">' + g[0] + '</h3>' +
+        '<p class="mt-2 text-sm text-gray-600 leading-relaxed">' + g[2] + '</p></div>' +
+      '</article>';
+    }).join('');
+    grid.querySelectorAll('img[data-f]').forEach(function (img) {
+      img.addEventListener('error', function () { fotoCari(img); });
+    });
+  }
+  /* animasi muncul saat di-scroll */
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+});
+</script>
+</body>
+</html>

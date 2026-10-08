@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Produk Kami | PT FAST</title>
+    <meta
+      name="description"
+      content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Layanan produksi dan maklon kapsul, tablet, serbuk oral, cairan obat dalam dan luar."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#7CA93E", dark: "#5E8629" },
+              accent: "#C0392B",
+              ink: "#1F2937",
+              soft: "#F8FAF6",
+            },
+            fontFamily: {
+              sans: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+              montserrat: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+              display: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+              baskerville: ['"Segoe UI"', "system-ui", "-apple-system", "Helvetica Neue", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      [data-nav].is-active {
+        color: #5e8629;
+        box-shadow: inset 0 -2px 0 #c0392b;
+      }
+      .pill {
+        border-radius: 999px;
+        background: linear-gradient(90deg, #7ca93e 55%, #c0392b 55%);
+      }
+      .hero-bg {
+        background:
+          radial-gradient(circle at 85% 20%, rgba(124, 169, 62, 0.35), transparent 45%),
+          linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1f2937 100%);
+      }
+      section[id] {
+        scroll-margin-top: 4rem;
+      }
+      :focus-visible {
+        outline: 3px solid #c0392b;
+        outline-offset: 2px;
+      }
+      .wrap {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 0 1.5rem;
+        }
+      }
+      /* Tab Produk: kontrol segmen modern */
+      #produk-tabs > div[role="tablist"] {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding: 0.25rem;
+        background: #eef3e8;
+        border-radius: 1rem;
+      }
+      #produk-tabs .tab {
+        border: 0;
+        background: transparent;
+        color: #4b5563;
+        padding: 0.6rem 1.15rem;
+        border-radius: 0.75rem;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      }
+      #produk-tabs .tab:hover {
+        color: #5e8629;
+      }
+      #produk-tabs .tab.is-tab {
+        background: #7ca93e;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(94, 134, 41, 0.35);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .prod,
+        .prod img {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <div id="site-header"></div>
+    <main>
+      <!-- Hero -->
+      <section class="hero-bg text-white relative overflow-hidden">
+        <div
+          class="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-primary/25 blur-3xl"
+          aria-hidden="true"
+        ></div>
+        <div class="wrap relative py-14 sm:py-16">
+          <nav class="text-sm text-white/70" aria-label="Breadcrumb">
+            <a href="index.html" class="hover:text-white">Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-white">Produk Kami</span>
+          </nav>
+          <div class="pill w-16 h-6 mt-5 mb-4" aria-hidden="true"></div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">Produk Kami</h1>
+          <p class="mt-3 text-white/80 max-w-2xl text-lg">
+            Produk tersedia dan terproduksi/beredar dengan Nomor Izin Edar BPOM.
+          </p>
+          <ul class="mt-7 flex flex-wrap gap-2.5 text-sm font-semibold">
+            <li class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5">
+              <i class="fa-solid fa-circle-check text-primary"></i>Terdaftar BPOM RI
+            </li>
+            <li class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5">
+              <i class="fa-solid fa-flask text-primary"></i>CPOTB/GMP
+            </li>
+            <li class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5">
+              <i class="fa-solid fa-moon text-primary"></i>Sistem Jaminan Halal
+            </li>
+          </ul>
+        </div>
+      </section>
+            
+      <!-- Produk -->
+      <section id="produk" class="py-16 lg:py-24">
+        <div class="wrap">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[.14em] text-primary-dark">
+              Terdaftar BPOM RI
+            </p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-bold leading-tight">
+              Pilih produk yang sudah siap
+            </h2>
+          </div>
+
+          <figure
+            data-banner
+            class="mt-8 mb-16 rounded-3xl bg-soft border border-gray-100 p-3 sm:p-6 overflow-x-auto"
+          >
+            <img
+              src="assets/produk-kami-banner.png"
+              alt="Produk terdaftar BPOM RI: Gamat Emas Mahkota, Gamasy Gamat, Gartea, Glowtagen C, Gluvita Capsule"
+              class="w-full h-auto min-w-[760px] sm:min-w-0"
+              loading="lazy"
+              onerror="this.closest('[data-banner]').remove()"
+            />
+            <figcaption class="sm:hidden mt-3 text-center text-xs text-gray-500">
+              Geser ke samping untuk melihat semua produk
+            </figcaption>
+          </figure>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold">Daftar Produk</h3>
+            <p class="mt-2 text-gray-600 max-w-3xl">
+              Anda dapat memilih nama/merek, Nomor Izin Edar (NIE), dan desain
+              kemasan yang telah tersedia dan terdaftar di BPOM RI.
+            </p>
+          </div>
+          <div id="produk-tabs"></div>
+        </div>
+      </section>
+
+      <!-- Ajakan -->
+      <section class="pb-16 lg:pb-24">
+        <div class="wrap">
+          <div
+            class="hero-bg relative overflow-hidden rounded-3xl text-white px-6 sm:px-12 py-12 sm:py-14 grid lg:grid-cols-[1fr_auto] gap-8 items-center"
+          >
+            <div
+              class="absolute -left-20 -bottom-24 w-72 h-72 rounded-full bg-primary/20 blur-3xl"
+              aria-hidden="true"
+            ></div>
+            <div class="relative max-w-2xl">
+              <h2 class="text-2xl sm:text-3xl font-bold leading-tight">
+                Butuh produk dengan formula sendiri?
+              </h2>
+              <p class="mt-3 text-white/80">
+                Anda juga dapat membuat Produk Obat Herbal Khusus (Customize
+                Herbal Medicine Product). Konsultasikan kebutuhan Anda dengan
+                tim kami.
+              </p>
+            </div>
+            <div class="relative flex flex-wrap gap-3">
+              <a
+                href="kontak.html"
+                class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors"
+              >
+                Hubungi Kami <i class="fa-solid fa-arrow-right text-sm"></i>
+              </a>
+              <a
+                href="maklon.html"
+                class="inline-flex items-center gap-2 border border-white/40 hover:bg-white hover:text-ink font-semibold px-6 py-3 rounded-full transition-colors"
+              >
+                Proses Maklon
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="layout.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

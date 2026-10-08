@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <script>
+      /* Pencari gambar otomatis: coba NAMA.jpg / .png / .jpeg / .webp di folder data-d.
+         Jika semua gagal, gambar disembunyikan dan kotak placeholder tampil. */
+      window.fotoCari = function (img) {
+        var f = img.dataset.f,
+          d = img.dataset.d || "assets/img/",
+          exts = ["jpg", "png", "jpeg", "webp", "JPG", "PNG", "JPEG", "WEBP"];
+        if (!img._c) {
+          img._c = exts.map(function (e) {
+            return d + f + "." + e;
+          });
+          img._i = 1;
+        }
+        if (img._i < img._c.length) {
+          img.src = img._c[img._i++];
+          return;
+        }
+        img.classList.add("hidden");
+        var n = img.nextElementSibling;
+        if (n && n.classList.contains("fb")) n.classList.remove("hidden");
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Izin & Sertifikasi | PT FAST</title>
+    <meta
+      name="description"
+      content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Layanan produksi dan maklon kapsul, tablet, serbuk oral, cairan obat dalam dan luar."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#7CA93E", dark: "#5E8629" },
+              accent: "#C0392B",
+              ink: "#1F2937",
+              soft: "#F8FAF6",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              display: ["Fraunces", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      [data-nav].is-active {
+        color: #5e8629;
+        box-shadow: inset 0 -2px 0 #c0392b;
+      }
+      .tab.is-tab {
+        background: #7ca93e;
+        color: #fff;
+        border-color: #7ca93e;
+      }
+      .pill {
+        border-radius: 999px;
+        background: linear-gradient(90deg, #7ca93e 55%, #c0392b 55%);
+      }
+      .hero-bg {
+        background:
+          radial-gradient(circle at 85% 20%, rgba(124, 169, 62, 0.35), transparent 45%),
+          linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1f2937 100%);
+      }
+      section[id] {
+        scroll-margin-top: 5rem;
+      }
+      :focus-visible {
+        outline: 3px solid #c0392b;
+        outline-offset: 2px;
+      }
+      .sec {
+        padding: 5rem 0;
+      }
+      @media (min-width: 1024px) {
+        .sec {
+          padding: 7rem 0;
+        }
+      }
+      .h2 {
+        font-family: Fraunces, serif;
+        font-weight: 700;
+        font-size: 1.875rem;
+        line-height: 1.2;
+      }
+      @media (min-width: 640px) {
+        .h2 {
+          font-size: 2.25rem;
+        }
+      }
+      .wrap {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 0 1.5rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* ---- Tampilan halaman Izin & Sertifikasi ---- */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #5e8629;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 1.75rem;
+        height: 2px;
+        background: #c0392b;
+      }
+      .jump {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.7rem 1.3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+      }
+      .jump:hover {
+        background: #fff;
+        color: #2c4a1c;
+        border-color: #fff;
+      }
+      .dots {
+        background-image: radial-gradient(#dfe6d3 1.3px, transparent 1.3px);
+        background-size: 24px 24px;
+      }
+      .dots-white {
+        background-color: #fff;
+      }
+      .dots-soft {
+        background-color: #f8faf6;
+      }
+
+      /* kartu info (bagian atas) */
+      .info-card {
+        background: #fff;
+        border: 1px solid #e5e9df;
+        border-radius: 1.25rem;
+        padding: 1.75rem;
+        box-shadow: 0 18px 40px -32px rgba(31, 41, 55, 0.45);
+      }
+      .info-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-family: Fraunces, serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+      .info-card h3 .ico {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 0.8rem;
+        background: #eef4e3;
+        color: #5e8629;
+        font-size: 1rem;
+      }
+
+      /* judul kelompok dokumen */
+      .grp-head {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        margin: 3.5rem 0 1.5rem;
+      }
+      .grp-head:first-of-type {
+        margin-top: 2.5rem;
+      }
+      .grp-head h3 {
+        font-family: Fraunces, serif;
+        font-weight: 600;
+        font-size: 1.35rem;
+      }
+      .grp-head .line {
+        flex: 1;
+        height: 1px;
+        background: #dfe6d3;
+      }
+      .grp-head .count {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #5e8629;
+        background: #eef4e3;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+      }
+
+      /* kartu dokumen */
+      .doc {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #e5e9df;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        cursor: zoom-in;
+        box-shadow: 0 18px 40px -32px rgba(31, 41, 55, 0.45);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .doc:hover {
+        transform: translateY(-4px);
+        border-color: #7ca93e;
+        box-shadow: 0 28px 50px -30px rgba(94, 134, 41, 0.55);
+      }
+      .doc.empty {
+        cursor: default;
+      }
+      .doc.empty:hover {
+        transform: none;
+        border-color: #e5e9df;
+        box-shadow: 0 18px 40px -32px rgba(31, 41, 55, 0.45);
+      }
+      .doc-thumb {
+        position: relative;
+        display: block;
+        aspect-ratio: 3 / 4;
+        background: #f1f4ec;
+        padding: 0.75rem;
+      }
+      .doc-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0.6rem;
+        background: #fff;
+      }
+      .doc-thumb .ph {
+        position: absolute;
+        inset: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 1rem;
+        border: 2px dashed #c9d6b4;
+        border-radius: 0.6rem;
+        color: #6b7c55;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      .doc-thumb .ph.hidden {
+        display: none;
+      }
+      .doc-thumb .hint {
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(31, 41, 55, 0.85);
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+      }
+      .doc:hover .hint,
+      .doc:focus-visible .hint {
+        opacity: 1;
+      }
+      @media (hover: none) {
+        .doc-thumb .hint {
+          opacity: 1;
+        }
+      }
+      .doc-cap {
+        display: block;
+        padding: 1rem 1.15rem 1.2rem;
+        border-top: 1px solid #eef1e8;
+      }
+      .doc-cap b {
+        display: block;
+        font-weight: 700;
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+      .doc-cap small {
+        display: block;
+        margin-top: 0.2rem;
+        color: #6b7280;
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+
+      /* lightbox */
+      #lb {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(17, 24, 17, 0.92);
+      }
+      #lb.open {
+        display: flex;
+      }
+      #lb figure {
+        max-width: min(92vw, 60rem);
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.9rem;
+      }
+      #lb img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 0.75rem;
+        background: #fff;
+        object-fit: contain;
+      }
+      #lb figcaption {
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      #lb button {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+        font-size: 1.1rem;
+        transition: background 0.2s ease;
+      }
+      #lb button:hover {
+        background: rgba(255, 255, 255, 0.28);
+      }
+      #lb .x {
+        top: 1rem;
+        right: 1rem;
+      }
+      #lb .prev {
+        left: 1rem;
+        top: 50%;
+      }
+      #lb .next {
+        right: 1rem;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <div id="site-header"></div>
+    <main>
+      <!-- Hero -->
+      <section class="hero-bg text-white">
+        <div class="wrap py-14">
+          <div class="pill w-16 h-6 mb-4" aria-hidden="true"></div>
+          <h1 class="font-display text-3xl sm:text-4xl font-bold">
+            Izin &amp; Sertifikasi
+          </h1>
+          <p class="mt-2 text-white/75 max-w-2xl">
+            Legalitas perusahaan, sertifikat CPOTB/GMP, jaminan halal, dan
+            lampiran dokumen.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#sertifikasi" class="jump"
+              ><i class="fa-solid fa-certificate" aria-hidden="true"></i>
+              Izin &amp; Sertifikasi</a
+            >
+            <a href="#dokumen" class="jump"
+              ><i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+              Lampiran Dokumen</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Izin & Sertifikasi (isi list diisi data.js) -->
+      <section id="sertifikasi" class="sec dots dots-white">
+        <div class="wrap">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Legalitas</p>
+            <h2 class="h2">Izin &amp; Sertifikasi</h2>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Dasar hukum dan sertifikasi yang menjadi jaminan mutu serta
+              kehalalan produk PT FAST.
+            </p>
+          </div>
+          <div class="mt-10 grid lg:grid-cols-2 gap-6">
+            <div class="info-card">
+              <h3>
+                <span class="ico"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
+                Akta dan Izin Legalitas
+              </h3>
+              <ul id="izin-list" class="mt-5 space-y-2 text-sm"></ul>
+            </div>
+            <div class="info-card">
+              <h3>
+                <span class="ico"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
+                Sejarah Izin Industri Obat Tradisional
+              </h3>
+              <ul id="iot-list" class="mt-5 space-y-3 text-sm"></ul>
+            </div>
+            <div class="info-card">
+              <h3>
+                <span class="ico"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+                Sertifikat CPOTB (GMP) per Sediaan
+              </h3>
+              <ul id="cpotb-list" class="mt-4"></ul>
+            </div>
+            <div class="info-card">
+              <h3>
+                <span class="ico"><i class="fa-solid fa-moon" aria-hidden="true"></i></span>
+                Jaminan Halal
+              </h3>
+              <ul id="halal-list" class="mt-5 space-y-3 text-sm"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lampiran Dokumen -->
+      <section id="dokumen" class="sec dots dots-soft">
+        <div class="wrap">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Dokumen</p>
+            <h2 class="h2">Lampiran Dokumen</h2>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Identitas dan legalitas perusahaan, sertifikat CPOTB per sediaan,
+              serta jaminan halal. Klik untuk memperbesar.
+            </p>
+          </div>
+
+          <div id="dok-root"></div>
+          <!-- dipertahankan agar script.js lama tidak error; tidak ditampilkan -->
+          <div id="dok-grid" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lb" role="dialog" aria-modal="true" aria-label="Pratinjau dokumen">
+      <button type="button" class="x" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+      <button type="button" class="prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+      <figure>
+        <img src="" alt="" />
+        <figcaption></figcaption>
+      </figure>
+      <button type="button" class="next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <div id="site-footer"></div>
+    <script src="layout.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+    <script>
+      /* ===== DAFTAR LAMPIRAN DOKUMEN =====
+         f    = nama file TANPA ekstensi (huruf kecil), disimpan di assets/img/sertifikat/
+         t    = judul yang tampil, d = keterangan singkat
+         Tambah/hapus baris sesuai dokumen yang kamu punya. */
+      var DOK = [
+        {
+          g: "Identitas & Legalitas Perusahaan",
+          i: "fa-building-columns",
+          items: [
+            { f: "akta-pendirian", t: "Akta Pendirian", d: "Akta pendirian perseroan" },
+            { f: "akta-perubahan-2024", t: "Akta Perubahan 2024", d: "Perubahan anggaran dasar tahun 2024" },
+            { f: "nib", t: "NIB", d: "Nomor Induk Berusaha" },
+            { f: "npwp", t: "NPWP", d: "Nomor Pokok Wajib Pajak perusahaan" },
+            { f: "tdp-siup", t: "TDP & SIUP", d: "Tanda Daftar Perusahaan dan Surat Izin Usaha Perdagangan" },
+          ],
+        },
+        {
+          g: "Sertifikat CPOTB (GMP)",
+          i: "fa-award",
+          items: [
+            { f: "cpotb-gmp", t: "Sertifikat CPOTB / GMP", d: "Sertifikat utama CPOTB" },
+            { f: "cpotb-kapsul", t: "CPOTB Kapsul", d: "Sediaan kapsul" },
+            { f: "cpotb-tablet", t: "CPOTB Tablet", d: "Sediaan tablet" },
+            { f: "cpotb-serbuk-oral", t: "CPOTB Serbuk Oral", d: "Sediaan serbuk oral" },
+            { f: "cpotb-cod", t: "CPOTB Cairan Obat Dalam", d: "Sediaan cairan obat dalam (COD)" },
+            { f: "cpotb-col", t: "CPOTB Cairan Obat Luar", d: "Sediaan cairan obat luar (COL)" },
+          ],
+        },
+        {
+          g: "Jaminan Halal",
+          i: "fa-moon",
+          items: [
+            { f: "halal-obat-tradisional", t: "Sertifikat Halal Obat Tradisional", d: "Produk obat tradisional" },
+            { f: "halal-suplemen-kesehatan", t: "Sertifikat Halal Suplemen Kesehatan", d: "Produk suplemen kesehatan" },
+            { f: "pelatihan-halal-has", t: "Pelatihan Sistem Jaminan Halal & HAS", d: "Sertifikat pelatihan SJH dan HAS" },
+          ],
+        },
+        {
+          g: "Dokumen Pendukung",
+          i: "fa-book-open",
+          items: [
+            { f: "cara-proses-produksi", t: "Cara Proses Produksi", d: "Dokumen proses produksi" },
+          ],
+        },
+      ];
+
+      (function () {
+        var root = document.getElementById("dok-root"),
+          html = "";
+        DOK.forEach(function (grp) {
+          html +=
+            '<div class="grp-head"><h3>' + grp.g + '</h3><span class="line"></span><span class="count">' +
+            grp.items.length + " dokumen</span></div>" +
+            '<div class="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-4 gap-5">';
+          grp.items.forEach(function (it) {
+            html +=
+              '<button type="button" class="doc" data-lb data-cap="' + it.t + '">' +
+              '<span class="doc-thumb">' +
+              '<img src="assets/img/sertifikat/' + it.f + '.jpg" data-d="assets/img/sertifikat/" data-f="' + it.f +
+              '" alt="' + it.t + '" loading="lazy" onerror="fotoCari(this)" />' +
+              '<span class="fb ph hidden"><i class="fa-solid ' + grp.i + ' text-3xl" aria-hidden="true"></i>' +
+              "Dokumen belum tersedia<br><span class=\"font-normal\">" + it.f + ".jpg</span></span>" +
+              '<span class="hint"><i class="fa-solid fa-expand" aria-hidden="true"></i> Perbesar</span>' +
+              "</span>" +
+              '<span class="doc-cap"><b>' + it.t + "</b><small>" + it.d + "</small></span>" +
+              "</button>";
+          });
+          html += "</div>";
+        });
+        root.innerHTML = html;
+
+        /* lightbox */
+        var lb = document.getElementById("lb"),
+          lbImg = lb.querySelector("img"),
+          lbCap = lb.querySelector("figcaption"),
+          cards = [].slice.call(root.querySelectorAll("[data-lb]")),
+          cur = 0;
+
+        function ok(c) {
+          var im = c.querySelector("img");
+          return im && !im.classList.contains("hidden") && im.complete && im.naturalWidth > 0;
+        }
+        function mark() {
+          cards.forEach(function (c) {
+            c.classList.toggle("empty", !ok(c));
+          });
+        }
+        function show(i) {
+          var n = cards.length, tries = 0;
+          cur = (i + n) % n;
+          while (!ok(cards[cur]) && tries++ < n) cur = (cur + 1) % n;
+          var im = cards[cur].querySelector("img");
+          lbImg.src = im.currentSrc || im.src;
+          lbImg.alt = cards[cur].dataset.cap;
+          lbCap.textContent = cards[cur].dataset.cap;
+        }
+        function step(d) {
+          var n = cards.length, j = cur;
+          for (var k = 0; k < n; k++) {
+            j = (j + d + n) % n;
+            if (ok(cards[j])) return show(j);
+          }
+        }
+        function close() {
+          lb.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        cards.forEach(function (c, i) {
+          c.addEventListener("click", function () {
+            if (!ok(c)) return;
+            show(i);
+            lb.classList.add("open");
+            document.body.style.overflow = "hidden";
+          });
+          c.querySelector("img").addEventListener("load", mark);
+          c.querySelector("img").addEventListener("error", function () {
+            setTimeout(mark, 50);
+          });
+        });
+        lb.querySelector(".x").addEventListener("click", close);
+        lb.querySelector(".prev").addEventListener("click", function () { step(-1); });
+        lb.querySelector(".next").addEventListener("click", function () { step(1); });
+        lb.addEventListener("click", function (e) {
+          if (e.target === lb) close();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (!lb.classList.contains("open")) return;
+          if (e.key === "Escape") close();
+          if (e.key === "ArrowLeft") step(-1);
+          if (e.key === "ArrowRight") step(1);
+        });
+        window.addEventListener("load", mark);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "judul": "Audit CPOTB: Perpanjangan Sertifikat Cara Pembuatan Obat Tradisional yang Baik",
+    "judul_en": "GMP Audit: Traditional Medicine Manufacturing Certificate Renewal",
+    "tanggal": "2026-09-12",
+    "kategori": "Sertifikasi",
+    "deskripsi": "Tim QA PT FAST menjalani audit CPOTB dan seluruh area produksi dinyatakan memenuhi standar.",
+    "deskripsi_en": "PT FAST's QA team completed its GMP audit and all production areas met the required standard.",
+    "gambar": "assets/events/event-1.jpg",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "judul": "Hadir di Pameran Herbal & Nutrasetikal Indonesia",
+    "judul_en": "Exhibiting at the Indonesia Herbal & Nutraceutical Expo",
+    "tanggal": "2026-08-20",
+    "kategori": "Pameran",
+    "deskripsi": "Kami memperkenalkan layanan maklon kapsul, tablet, dan cairan obat dalam kepada calon mitra.",
+    "deskripsi_en": "We introduced our capsule, tablet, and oral liquid toll manufacturing services to prospective partners.",
+    "gambar": "assets/events/event-2.jpg",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "judul": "Kunjungan Pakar: Pendampingan Formulasi Bersama Profesor Farmasi",
+    "judul_en": "Expert Visit: Formulation Mentoring with Pharmacy Professors",
+    "tanggal": "2026-07-05",
+    "kategori": "Riset & Pengembangan",
+    "deskripsi": "Tim R&D berdiskusi dengan akademisi tentang standarisasi ekstrak untuk produk klien maklon.",
+    "deskripsi_en": "Our R&D team worked with academics on extract standardization for toll manufacturing clients.",
+    "gambar": "assets/events/event-3.jpg",
+    "link": "#"
+  }
+]

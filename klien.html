@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <script>
+      document.documentElement.classList.add("js");
+      /* Pencari gambar otomatis: coba NAMA.jpg / .png / .jpeg / .webp (huruf kecil & besar) di folder yang ditentukan.
+         Jika semuanya gagal, gambar disembunyikan dan kotak placeholder tampil. */
+      window.fotoCari = function (img) {
+        var f = img.dataset.f,
+          d = img.dataset.d || "assets/img/",
+          exts = ["jpg", "png", "jpeg", "webp", "JPG", "PNG", "JPEG", "WEBP"];
+        if (!img._c) {
+          img._c = exts.map(function (e) {
+            return d + f + "." + e;
+          });
+          img._i = 1; /* kandidat pertama (.jpg) sudah dicoba lewat atribut src */
+        }
+        if (img._i < img._c.length) {
+          img.src = img._c[img._i++];
+          return;
+        }
+        img.classList.add("hidden");
+        var n = img.nextElementSibling;
+        if (n && n.classList.contains("fb")) n.classList.remove("hidden");
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Klien & Distributor | PT FAST</title>
+    <meta
+      name="description"
+      content="PT FAST: Industri Obat Tradisional (IOT) bersertifikat CPOTB/GMP BPOM dan Halal di Cimanggis, Depok. Klien dan distributor produk herbal PT FAST."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#7CA93E", dark: "#5E8629" },
+              accent: "#C0392B",
+              ink: "#1F2937",
+              soft: "#F8FAF6",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              display: ["Fraunces", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      [data-nav].is-active {
+        color: #5e8629;
+        box-shadow: inset 0 -2px 0 #c0392b;
+      }
+      .tab.is-tab {
+        background: #7ca93e;
+        color: #fff;
+        border-color: #7ca93e;
+      }
+      .pill {
+        border-radius: 999px;
+        background: linear-gradient(90deg, #7ca93e 55%, #c0392b 55%);
+      }
+      .hero-bg {
+        background:
+          radial-gradient(
+            circle at 85% 20%,
+            rgba(124, 169, 62, 0.35),
+            transparent 45%
+          ),
+          linear-gradient(135deg, #1b2a14 0%, #2c4a1c 55%, #1f2937 100%);
+      }
+      section[id] {
+        scroll-margin-top: 5rem;
+      }
+      :focus-visible {
+        outline: 3px solid #c0392b;
+        outline-offset: 2px;
+      }
+      .sec {
+        padding: 5rem 0;
+      }
+      @media (min-width: 1024px) {
+        .sec {
+          padding: 7rem 0;
+        }
+      }
+      .h2 {
+        font-family: Fraunces, serif;
+        font-weight: 700;
+        font-size: 1.875rem;
+        line-height: 1.2;
+      }
+      @media (min-width: 640px) {
+        .h2 {
+          font-size: 2.25rem;
+        }
+      }
+      .wrap {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 0 1.5rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* ---- Tampilan halaman Klien & Distributor ---- */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #5e8629;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 1.75rem;
+        height: 2px;
+        background: #c0392b;
+      }
+
+      /* tombol lompat di hero */
+      .jump {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.7rem 1.3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+      }
+      .jump:hover {
+        background: #fff;
+        color: #2c4a1c;
+        border-color: #fff;
+      }
+
+      /* latar titik-titik halus di tiap bagian */
+      .dots {
+        background-image: radial-gradient(#dfe6d3 1.3px, transparent 1.3px);
+        background-size: 24px 24px;
+      }
+      .dots-white {
+        background-color: #fff;
+      }
+      .dots-soft {
+        background-color: #f8faf6;
+      }
+
+      /* panel gambar besar (satu gambar per bagian) */
+      .showcase-wrap {
+        position: relative;
+        max-width: 68rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .showcase-wrap::before {
+        content: "";
+        position: absolute;
+        right: -14px;
+        bottom: -14px;
+        width: 70%;
+        height: 70%;
+        border-radius: 1.9rem;
+        background: linear-gradient(135deg, #7ca93e, #5e8629);
+        opacity: 0.2;
+        z-index: 0;
+      }
+      .showcase-wrap.flip::before {
+        right: auto;
+        left: -14px;
+      }
+      .showcase {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        padding: 0.9rem;
+        background: #fff;
+        border: 1px solid #e5e9df;
+        border-radius: 1.75rem;
+        box-shadow: 0 30px 60px -36px rgba(31, 41, 55, 0.5);
+        cursor: zoom-in;
+        overflow: hidden;
+        text-align: left;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .showcase:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 36px 64px -34px rgba(94, 134, 41, 0.6);
+      }
+      .showcase img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 1.1rem;
+        transition: transform 0.6s ease;
+      }
+      .showcase:hover img {
+        transform: scale(1.015);
+      }
+      .showcase .ph {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        aspect-ratio: 21 / 9;
+        border-radius: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        background: linear-gradient(135deg, #2c4a1c, #7ca93e);
+        font-weight: 600;
+        text-align: center;
+        padding: 1rem;
+      }
+      .showcase .ph.hidden {
+        display: none;
+      }
+      .showcase .hint {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(31, 41, 55, 0.85);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        pointer-events: none;
+      }
+      .showcase:hover .hint,
+      .showcase:focus-visible .hint {
+        opacity: 1;
+        transform: none;
+      }
+      @media (hover: none) {
+        .showcase .hint {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* animasi muncul saat di-scroll */
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .js .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .js .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .showcase,
+        .showcase img {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <div id="site-header"></div>
+    <main>
+      <!-- Hero -->
+      <section class="hero-bg text-white">
+        <div class="wrap py-14">
+          <div class="pill w-16 h-6 mb-4" aria-hidden="true"></div>
+          <h1 class="font-display text-3xl sm:text-4xl font-bold">
+            Klien &amp; Distributor
+          </h1>
+          <p class="mt-2 text-white/75 max-w-2xl">
+            Mitra yang bekerja sama dengan PT FAST dalam produksi, maklon, dan
+            distribusi produk herbal.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#klien" class="jump"
+              ><i class="fa-solid fa-handshake" aria-hidden="true"></i> Klien
+              Kami</a
+            >
+            <a href="#distributor" class="jump"
+              ><i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+              Distributor Kami</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Klien: satu gambar besar -->
+      <section id="klien" class="sec dots dots-white">
+        <div class="wrap">
+          <div class="max-w-2xl reveal">
+            <p class="eyebrow">Klien</p>
+            <h2 class="h2">Klien Kami</h2>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Perusahaan dan brand yang bekerja sama dengan PT FAST dalam
+              produksi dan maklon produk herbal.
+            </p>
+          </div>
+
+          <div class="showcase-wrap mt-10 reveal">
+            <button
+              type="button"
+              data-zoom="assets/img/pg-65.jpg"
+              data-cap="Klien Kami"
+              class="showcase"
+              aria-label="Perbesar gambar klien kami"
+            >
+              <img
+                src="assets/img/pg-65.jpg"
+                data-f="pg-65"
+                alt="Klien PT FAST"
+                loading="lazy"
+                onerror="fotoCari(this)"
+              />
+              <span class="fb ph hidden"
+                ><i class="fa-solid fa-handshake text-4xl" aria-hidden="true"></i
+                >Gambar klien belum tersedia</span
+              >
+              <span class="hint"
+                ><i class="fa-solid fa-expand" aria-hidden="true"></i> Klik
+                untuk memperbesar</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Distributor: satu gambar besar -->
+      <section id="distributor" class="sec dots dots-soft">
+        <div class="wrap">
+          <div class="max-w-2xl reveal">
+            <p class="eyebrow">Distributor</p>
+            <h2 class="h2">Distributor Kami</h2>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Mitra distribusi yang membantu produk herbal PT FAST menjangkau
+              konsumen di berbagai wilayah.
+            </p>
+          </div>
+
+          <div class="showcase-wrap flip mt-10 reveal">
+            <button
+              type="button"
+              data-zoom="assets/img/pg-66.jpg"
+              data-cap="Distributor Kami"
+              class="showcase"
+              aria-label="Perbesar gambar distributor kami"
+            >
+              <img
+                src="assets/img/pg-66.jpg"
+                data-f="pg-66"
+                alt="Distributor PT FAST"
+                loading="lazy"
+                onerror="fotoCari(this)"
+              />
+              <span class="fb ph hidden"
+                ><i class="fa-solid fa-truck-fast text-4xl" aria-hidden="true"></i
+                >Gambar distributor belum tersedia</span
+              >
+              <span class="hint"
+                ><i class="fa-solid fa-expand" aria-hidden="true"></i> Klik
+                untuk memperbesar</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ajakan -->
+      <section class="hero-bg text-white">
+        <div class="wrap py-14 text-center">
+          <div class="pill w-16 h-6 mb-5 mx-auto" aria-hidden="true"></div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold">
+            Ingin menjadi klien atau distributor kami?
+          </h2>
+          <p class="mt-3 text-white/75 max-w-xl mx-auto">
+            Hubungi tim PT FAST untuk membahas kerja sama produksi, maklon,
+            atau distribusi.
+          </p>
+          <div class="mt-7 flex flex-wrap justify-center gap-3">
+            <a
+              href="kontak.html"
+              class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-dark transition"
+              ><i class="fa-solid fa-comments"></i> Hubungi Kami</a
+            >
+            <a
+              href="kerjasama.html"
+              class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 font-semibold text-white hover:bg-white/10 transition"
+              >Lihat Kerjasama <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="layout.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+    <script>
+      /* animasi muncul saat di-scroll */
+      (function () {
+        var els = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window)) {
+          els.forEach(function (e) {
+            e.classList.add("in");
+          });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) {
+                en.target.classList.add("in");
+                io.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        els.forEach(function (e) {
+          io.observe(e);
+        });
+      })();
+    </script>
+  </body>
+</html>
